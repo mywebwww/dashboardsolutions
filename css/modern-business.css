@@ -1,0 +1,95 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+
+body {
+  padding-top: 56px;
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+h1{
+	color: dimgray;
+  /*color: SaddleBrown;*/
+  text-align: center;
+  font-weight: bold
+  
+}
+
+.navColor{
+  background-color: black;
+}
+
+.showBorder{
+  border-style: solid;
+  border-color: red
+}
+
+.containImage{
+  background-position: center;
+  background-size: 50% 100%;
+
+  
+  
+
+}
+
+.lowBorder{
+  border-bottom: 1px solid gray;
+}
+
+h2{
+  text-align: center;
+  color: black;
+  /*color: SaddleBrown;*/
+
+}
+
+#carouselExampleIndicators{
+  /*border-top: 3px solid black;*/
+  border-bottom: 2px solid black;
+}
+
+.truckSize{
+  
+  height: 530px;
+  width: 450px;
+
+  
+
+}
+
+.giveTopPadding{
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.topAndBottomBorder{
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.nameStyle{
+  font-style: italic;
+}
+
+#logoImage{
+  width: 70px;
+  height: 30px;
+}

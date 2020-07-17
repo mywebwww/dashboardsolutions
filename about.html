@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Modern Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark navColor fixed-top">
+    <div class="container">
+      <a class="navbar-brand nameStyle" href="index.html"><img id="logoImage" src="pictures/logo.jpeg" alt="Dashboard solutions logo"> Dashboard Solution</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="about.html">Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    
+    
+
+
+    
+    
+
+    
+
+    <script>
+    function myFunction() {
+      var paymentCode;
+      var inpObj = document.getElementById("id1").value;
+      if (inpObj < 0.01) {
+        document.getElementById("demo").innerHTML = "Invalid amount";
+      } else {
+        document.getElementById("demo").innerHTML = "OK";
+        document.getElementById("payContainer").removeAttribute("hidden");
+      }
+      
+    } 
+    </script>
+
+
+
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Make Payment</h1>
+
+    <div class="text-center">
+      <p>Enter Amount</p>
+      $<input  id="id1" type="number">
+      <button  onclick="myFunction()">Summit</button>
+      <p id="demo"></p>
+    </div>
+
+    
+
+
+    <div class="text-center" id="payContainer" hidden>
+      <div id="paypal-button-container"></div>
+      <script src="https://www.paypal.com/sdk/js?client-id=Ad1C7HL443D4KHTS_b0DX7WHyZZ_1YBCSWE18P84Wq2GgSKjSUhDtmRD5Ji1jOKDKf5QWkX1mTD6AjuM" data-sdk-integration-source="button-factory"></script>
+      <script>
+        paypal.Buttons({
+            style: {
+                shape: 'rect',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'pay',
+                
+            },
+            createOrder: function(data, actions) {
+              var theAmount = document.getElementById("id1").value;
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: theAmount
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+        }).render('#paypal-button-container');
+      </script>
+    </div>
+
+    
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Dashboard Solution 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
